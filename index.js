@@ -2,7 +2,7 @@ const express = require('express')
 require('dotenv').config()
 
 // require routes
-
+const usersRouter = require('./routes/users-view')
 
 
 const app = express()
@@ -19,7 +19,7 @@ app.set('views', './templates')
 
 
 // MIDDLEWARE ROUTES
-
+app.use('/',usersRouter)
 
 
 app.listen(PORT, () => console.log(`App is listening on http://localhost:${PORT}`))
